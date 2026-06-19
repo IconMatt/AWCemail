@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AWC Email Templates — Index</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --orange:#E1670F; --orange-dark:#C4560B; --ink:#23281F; --body:#4A4A4A;
+      --green:#233027; --cream:#F6F2EA; --page:#EDE8DE; --rule:#E1D9C9; --white:#fff;
+    }
+    *{box-sizing:border-box;}
+    body{margin:0;background:var(--page);color:var(--body);
+      font-family:'Inter','Helvetica Neue',Arial,sans-serif;line-height:1.55;}
+    .wrap{max-width:1040px;margin:0 auto;padding:0 24px 80px;}
+    header.masthead{background:var(--green);color:#fff;padding:0;border-bottom:5px solid var(--orange);}
+    .masthead-inner{max-width:1040px;margin:0 auto;padding:34px 24px 38px;}
+    .logo{display:inline-block;font-family:'Poppins',Arial,sans-serif;font-weight:700;
+      letter-spacing:2px;font-size:20px;color:#fff;border:2px solid rgba(255,255,255,.5);
+      padding:7px 14px;border-radius:4px;}
+    h1{font-family:'Poppins',Arial,sans-serif;color:#fff;font-size:30px;line-height:1.2;
+      margin:22px 0 8px;font-weight:700;}
+    .masthead-inner p{color:#C9D1C8;max-width:680px;margin:0;font-size:16px;}
+    .meta{margin-top:18px;font-size:13px;color:#9DA89A;}
+    .meta b{color:#E7CDB6;font-weight:600;}
+    h2.section{font-family:'Poppins',Arial,sans-serif;color:var(--ink);font-size:15px;
+      letter-spacing:1.5px;text-transform:uppercase;margin:46px 0 6px;}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;margin-top:18px;}
+    .card{display:flex;flex-direction:column;justify-content:space-between;
+      background:var(--white);border:1px solid var(--rule);border-radius:12px;
+      padding:22px 22px 20px;text-decoration:none;color:inherit;
+      transition:transform .12s ease, box-shadow .12s ease, border-color .12s ease;}
+    .card:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(35,40,31,.10);border-color:#D8C8AE;}
+    .badge{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.6px;
+      text-transform:uppercase;padding:3px 9px;border-radius:20px;margin-bottom:12px;}
+    .badge-template{background:#FBEEE2;color:var(--orange-dark);}
+    .badge-reference{background:#E7ECE6;color:var(--green);}
+    .card h2{font-family:'Poppins',Arial,sans-serif;color:var(--ink);font-size:21px;margin:0 0 8px;font-weight:700;}
+    .blurb{font-size:14.5px;color:var(--body);margin:0 0 16px;}
+    .chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px;}
+    .chip{font-size:11.5px;background:var(--cream);color:#6A6457;border:1px solid var(--rule);
+      padding:4px 9px;border-radius:20px;white-space:nowrap;}
+    .open{font-family:'Poppins',Arial,sans-serif;color:var(--orange);font-weight:600;font-size:14px;}
+    footer.foot{margin-top:54px;padding-top:22px;border-top:1px solid var(--rule);
+      font-size:13px;color:#8A8475;}
+    /* component matrix */
+    .mx-legend{font-size:13px;color:#6A6457;margin:6px 0 0;}
+    .mx-legend .dot, .mx-legend .mx-blank{margin:0 5px 0 2px;}
+    .mx-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:16px;
+      border:1px solid var(--rule);border-radius:12px;background:var(--white);}
+    table.matrix{border-collapse:collapse;width:100%;min-width:660px;font-size:14px;}
+    table.matrix th, table.matrix td{padding:13px 12px;text-align:center;border-bottom:1px solid #EFE9DD;}
+    table.matrix tbody tr:last-child th, table.matrix tbody tr:last-child td{border-bottom:none;}
+    table.matrix thead th{font-family:'Poppins',Arial,sans-serif;font-weight:600;font-size:13px;
+      color:var(--ink);white-space:nowrap;border-bottom:1px solid var(--rule);}
+    .mx-comp{text-align:left!important;white-space:nowrap;padding-left:20px!important;
+      font-weight:400;color:var(--body);position:sticky;left:0;background:var(--white);
+      box-shadow:1px 0 0 var(--rule);}
+    thead .mx-comp{color:var(--ink);}
+    .mx-strong .mx-comp{font-weight:700;color:var(--ink);}
+    .dot{display:inline-block;width:11px;height:11px;border-radius:50%;vertical-align:middle;}
+    .dot.core{background:var(--orange);}
+    .dot.opt{background:transparent;border:1.5px solid #D8B48E;}
+    .mx-blank{color:#CFC7B6;}
+    /* technical / platform / steps */
+    .info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:20px;margin-top:18px;}
+    .info-card{background:var(--white);border:1px solid var(--rule);border-radius:12px;padding:20px 24px 8px;}
+    .info-card h3{font-family:'Poppins',Arial,sans-serif;font-size:16px;font-weight:700;color:var(--ink);margin:0 0 10px;}
+    .info-list{list-style:none;margin:0;padding:0;}
+    .info-list li{position:relative;padding:9px 0 9px 20px;font-size:14.5px;line-height:1.45;
+      color:var(--body);border-bottom:1px solid #F2EDE2;}
+    .info-list li:last-child{border-bottom:none;}
+    .info-list li:before{content:"";position:absolute;left:0;top:15px;width:7px;height:7px;
+      border-radius:50%;background:var(--orange);}
+    .steps{list-style:none;counter-reset:step;margin:18px 0 0;padding:0;
+      background:var(--white);border:1px solid var(--rule);border-radius:12px;}
+    .steps li{counter-increment:step;position:relative;padding:14px 22px 14px 58px;font-size:15px;
+      line-height:1.45;color:var(--body);border-bottom:1px solid #F2EDE2;}
+    .steps li:last-child{border-bottom:none;}
+    .steps li:before{content:counter(step);position:absolute;left:18px;top:13px;width:26px;height:26px;
+      border-radius:50%;background:var(--orange);color:#fff;font-family:'Poppins',Arial,sans-serif;
+      font-weight:700;font-size:13px;line-height:26px;text-align:center;}
+    @media (max-width:520px){ h1{font-size:24px;} .masthead-inner{padding:26px 20px 30px;} }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <span class="logo">AWC</span>
+      <h1>Email Templates</h1>
+      <p>Component-driven EDM template set for Australian Wildlife Conservancy. Every template is assembled from the same modules as the master build — table-based, SFMC-ready, 640px desktop, single-column on mobile.</p>
+      <div class="meta">Body width <b>640px</b> &nbsp;·&nbsp; Mobile <b>fluid 100%</b> &nbsp;·&nbsp; Each template shows only its <b>core (●)</b> modules from the matrix</div>
+    </div>
+  </header>
+  <div class="wrap">
+    <h2 class="section">Reference</h2>
+    <div class="grid">
+      <a class="card" href="awc-master-demo-640.html">
+        <div class="card-top">
+          <span class="badge badge-reference">Reference</span>
+          <h2>Master (kitchen-sink)</h2>
+          <p class="blurb">Every module in the design system, in sequence — the component library all templates draw from.</p>
+        </div>
+        <div class="chips"><span class="chip">All 16 modules</span></div>
+        <span class="open">Open template &rarr;</span>
+      </a>
+    </div>
+
+    <h2 class="section">Templates</h2>
+    <div class="grid">
+      <a class="card" href="newsletter.html">
+        <div class="card-top">
+          <span class="badge badge-template">Template</span>
+          <h2>Newsletter</h2>
+          <p class="blurb">Regular supporter update — a lead story plus a rich mix of field stories, a feature and a closing call to action.</p>
+        </div>
+        <div class="chips"><span class="chip">Header</span><span class="chip">Hero banner</span><span class="chip">Hero image with copy</span><span class="chip">Intro section</span><span class="chip">Single-column story</span><span class="chip">Two-column story</span><span class="chip">Feature article</span><span class="chip">Image with caption</span><span class="chip">CTA banner</span><span class="chip">Section divider</span><span class="chip">Footer</span></div>
+        <span class="open">Open template &rarr;</span>
+      </a>
+      <a class="card" href="solus.html">
+        <div class="card-top">
+          <span class="badge badge-template">Template</span>
+          <h2>Solus</h2>
+          <p class="blurb">Single-subject editorial send — one story told in depth, backed by impact stats and a testimonial.</p>
+        </div>
+        <div class="chips"><span class="chip">Header</span><span class="chip">Hero image with copy</span><span class="chip">Intro section</span><span class="chip">Statistics / impact</span><span class="chip">Single-column story</span><span class="chip">Feature article</span><span class="chip">Image with caption</span><span class="chip">Pull quote / testimonial</span><span class="chip">CTA banner</span><span class="chip">Section divider</span><span class="chip">Footer</span></div>
+        <span class="open">Open template &rarr;</span>
+      </a>
+      <a class="card" href="appeal.html">
+        <div class="card-top">
+          <span class="badge badge-template">Template</span>
+          <h2>Appeal</h2>
+          <p class="blurb">Fundraising-focused send — emotive testimonial and impact stats leading into a donation ask.</p>
+        </div>
+        <div class="chips"><span class="chip">Header</span><span class="chip">Hero image with copy</span><span class="chip">Intro section</span><span class="chip">Statistics / impact</span><span class="chip">Pull quote / testimonial</span><span class="chip">CTA banner</span><span class="chip">Donation appeal</span><span class="chip">Section divider</span><span class="chip">Footer</span></div>
+        <span class="open">Open template &rarr;</span>
+      </a>
+      <a class="card" href="webinar-invite.html">
+        <div class="card-top">
+          <span class="badge badge-template">Template</span>
+          <h2>Webinar Invite</h2>
+          <p class="blurb">Online event invitation — topic intro, featured speaker and the logistics, with a register CTA.</p>
+        </div>
+        <div class="chips"><span class="chip">Header</span><span class="chip">Hero banner</span><span class="chip">Hero image with copy</span><span class="chip">Intro section</span><span class="chip">Image with caption</span><span class="chip">Event details</span><span class="chip">Webinar speaker</span><span class="chip">CTA banner</span><span class="chip">Section divider</span><span class="chip">Footer</span></div>
+        <span class="open">Open template &rarr;</span>
+      </a>
+      <a class="card" href="event-invite.html">
+        <div class="card-top">
+          <span class="badge badge-template">Template</span>
+          <h2>Event Invite</h2>
+          <p class="blurb">In-person / hybrid event invitation — short, punchy, structured event details and an RSVP.</p>
+        </div>
+        <div class="chips"><span class="chip">Header</span><span class="chip">Hero banner</span><span class="chip">Intro section</span><span class="chip">Event details</span><span class="chip">CTA banner</span><span class="chip">Section divider</span><span class="chip">Footer</span></div>
+        <span class="open">Open template &rarr;</span>
+      </a>
+    </div>
+
+    <h2 class="section">Component matrix</h2>
+      <p class="mx-legend"><span class="dot core"></span> core / typical &nbsp;·&nbsp; <span class="dot opt"></span> optional &nbsp;·&nbsp; <span class="mx-blank">&ndash;</span> not used</p>
+      <div class="mx-wrap"><table class="matrix"><thead><tr><th class="mx-comp">Component</th><th>Newsletter</th><th>Solus</th><th>Appeal</th><th>Webinar Invite</th><th>Event Invite</th></tr></thead><tbody>
+          <tr class="mx-strong"><th scope="row" class="mx-comp">Header</th><td><span class="dot core" title="core / typical"></span></td><td><span class="dot core" title="core / typical"></span></td><td><span class="dot core" title="core / typical"></span></td><td><span class="dot core" title="core / typical"></span></td><td><span class="dot core" title="core / typical"></span></td></tr>
+          <tr><th scope="row" class="mx-comp">Hero banner</th><td><span class="dot core" title="core / typical"></span></td><td><span class="dot opt" title="optional"></span></td><td><span class="dot opt" title="optional"></span></td><td><span class="dot core" title="core / typical"></span></td><td><span class="dot core" title="core / typical"></span></td></tr>
+          <tr><th scope="row" class="mx-comp">Hero image with copy</th><td><span class="dot core" title="core / typical"></span></td><td><span class="dot core" title="core / typical"></span></td><td><span class="dot core" title="core / typical"></span></td><td><span class="dot core" title="core / typical"></span></td><td><span class="dot opt" title="optional"></span></td></tr>
+          <tr><th scope="row" class="mx-comp">Intro section</th><td><span class="dot core" title="core / typical"></span></td><td><span class="dot core" title="core / typical"></span></td><td><span class="dot core" title="core / typical"></span></td><td><span class="dot core" title="core / typical"></span></td><td><span class="dot core" title="core / typical"></span></td></tr>
+          <tr><th scope="row" class="mx-comp">Single-column story</th><td><span class="dot core" title="core / typical"></span></td><td><span class="dot core" title="core / typical"></span></td><td><span class="dot opt" title="optional"></span></td><td><span class="dot opt" title="optional"></span></td><td><span class="dot opt" title="optional"></span></td></tr>
+          <tr><th scope="row" class="mx-comp">Two-column story</th><td><span class="dot core" title="core / typical"></span></td><td><span class="dot opt" title="optional"></span></td><td><span class="mx-blank" title="not used">&ndash;</span></td><td><span class="mx-blank" title="not used">&ndash;</span></td><td><span class="dot opt" title="optional"></span></td></tr>
+          <tr><th scope="row" class="mx-comp">Feature article</th><td><span class="dot core" title="core / typical"></span></td><td><span class="dot core" title="core / typical"></span></td><td><span class="dot opt" title="optional"></span></td><td><span class="mx-blank" title="not used">&ndash;</span></td><td><span class="mx-blank" title="not used">&ndash;</span></td></tr>
+          <tr><th scope="row" class="mx-comp">Image with caption</th><td><span class="dot core" title="core / typical"></span></td><td><span class="dot core" title="core / typical"></span></td><td><span class="dot opt" title="optional"></span></td><td><span class="dot opt" title="optional"></span></td><td><span class="dot opt" title="optional"></span></td></tr>
+          <tr><th scope="row" class="mx-comp">Pull quote / testimonial</th><td><span class="dot opt" title="optional"></span></td><td><span class="dot core" title="core / typical"></span></td><td><span class="dot core" title="core / typical"></span></td><td><span class="dot opt" title="optional"></span></td><td><span class="mx-blank" title="not used">&ndash;</span></td></tr>
+          <tr><th scope="row" class="mx-comp">CTA banner</th><td><span class="dot core" title="core / typical"></span></td><td><span class="dot core" title="core / typical"></span></td><td><span class="dot core" title="core / typical"></span></td><td><span class="dot core" title="core / typical"></span></td><td><span class="dot core" title="core / typical"></span></td></tr>
+          <tr><th scope="row" class="mx-comp">Donation appeal section</th><td><span class="dot opt" title="optional"></span></td><td><span class="dot opt" title="optional"></span></td><td><span class="dot core" title="core / typical"></span></td><td><span class="mx-blank" title="not used">&ndash;</span></td><td><span class="dot opt" title="optional"></span></td></tr>
+          <tr><th scope="row" class="mx-comp">Event details module</th><td><span class="mx-blank" title="not used">&ndash;</span></td><td><span class="mx-blank" title="not used">&ndash;</span></td><td><span class="mx-blank" title="not used">&ndash;</span></td><td><span class="dot core" title="core / typical"></span></td><td><span class="dot core" title="core / typical"></span></td></tr>
+          <tr><th scope="row" class="mx-comp">Webinar speaker module</th><td><span class="mx-blank" title="not used">&ndash;</span></td><td><span class="mx-blank" title="not used">&ndash;</span></td><td><span class="mx-blank" title="not used">&ndash;</span></td><td><span class="dot core" title="core / typical"></span></td><td><span class="mx-blank" title="not used">&ndash;</span></td></tr>
+          <tr><th scope="row" class="mx-comp">Statistics / impact module</th><td><span class="dot opt" title="optional"></span></td><td><span class="dot core" title="core / typical"></span></td><td><span class="dot core" title="core / typical"></span></td><td><span class="mx-blank" title="not used">&ndash;</span></td><td><span class="mx-blank" title="not used">&ndash;</span></td></tr>
+          <tr><th scope="row" class="mx-comp">Section divider</th><td><span class="dot core" title="core / typical"></span></td><td><span class="dot core" title="core / typical"></span></td><td><span class="dot core" title="core / typical"></span></td><td><span class="dot core" title="core / typical"></span></td><td><span class="dot core" title="core / typical"></span></td></tr>
+          <tr class="mx-strong"><th scope="row" class="mx-comp">Footer</th><td><span class="dot core" title="core / typical"></span></td><td><span class="dot core" title="core / typical"></span></td><td><span class="dot core" title="core / typical"></span></td><td><span class="dot core" title="core / typical"></span></td><td><span class="dot core" title="core / typical"></span></td></tr>
+        </tbody></table></div>
+
+    <h2 class="section">Technical &amp; platform</h2>
+      <div class="info-grid">
+        <div class="info-card"><h3>SFMC build</h3><ul class="info-list"><li>Table-based HTML &middot; ~640px body &middot; single column on mobile</li><li>CSS inlined for production (media queries kept in &lt;head&gt;)</li><li>Modular Content Builder slots — editors swap content, no code</li><li>Outlook-safe: VML for buttons &amp; hero background image</li><li>Retina @2x imagery &middot; alt text on every image</li><li>Web-safe fonts: Poppins &rarr; Arial / Helvetica fallback</li><li>AMPscript tokens: view-in-browser, unsubscribe, preferences</li><li>Tap targets &ge;44px &middot; body text &ge;14–16px</li></ul></div>
+        <div class="info-card"><h3>Renders on</h3><ul class="info-list"><li>Apple Mail — macOS &amp; iOS</li><li>Gmail — web, iOS &amp; Android</li><li>Outlook — Windows 2016–2021 &amp; Microsoft 365</li><li>Outlook.com, Outlook for Mac &amp; mobile</li><li>Yahoo Mail &amp; AOL Mail</li><li>Samsung Mail (Android)</li><li>Light &amp; dark mode aware</li></ul></div>
+      </div>
+      <h2 class="section">Adding templates to SFMC</h2>
+      <ol class="steps"><li>Upload the images to Content Builder; copy the hosted URLs.</li><li>Create an email in Content Builder and paste the template HTML.</li><li>Replace placeholder image URLs with the hosted Content Builder URLs.</li><li>Wrap the editable regions as content blocks / slots.</li><li>Set real links + AMPscript (unsubscribe, view-in-browser, profile).</li><li>Save as a reusable template.</li><li>Send a test and preview across clients (Litmus / Email on Acid).</li><li>QA, fix, then activate for sending.</li></ol>
+
+    <footer class="foot">
+      Placeholder copy &amp; imagery throughout — final content supplied by AWC.
+      Built from <code>awc-master-demo-640.html</code> components. Re-run <code>node .claude/build-templates.js</code> after editing the master to regenerate.
+    </footer>
+  </div>
+</body>
+</html>
