@@ -155,14 +155,18 @@ TEMPLATES.forEach(t => {
 });
 
 // --- 5. Build index.html landing page --------------------------------------
-const cards = [
-  {
-    file: 'awc-master-demo-640.html', name: 'Master (kitchen-sink)', tag: 'Reference',
-    blurb: 'Every module in the design system, in sequence — the component library all templates draw from.',
-    core: ['All 16 modules'],
-  },
-  ...TEMPLATES.map(t => ({ file: t.file, name: t.name, tag: 'Template', blurb: t.blurb, core: t.core })),
-];
+const tplBy = Object.fromEntries(TEMPLATES.map(t => [t.file, t]));
+const mk = (file, tag, open) => { const t = tplBy[file]; return { file, name: t.name, tag, blurb: t.blurb, core: t.core, open }; };
+const masterCard = {
+  file: 'awc-master-demo-640.html', name: 'Master (kitchen-sink)', tag: 'Reference', open: 'Open reference',
+  blurb: 'Every module in the design system, in sequence — the component library all templates draw from.',
+  core: ['All 16 modules'],
+};
+// Two-template architecture: Newsletter is its own template; the campaign sends
+// are examples of the single Flexible Campaign template.
+const newsletterCard = mk('newsletter.html', 'Template', 'Open template');
+const campaignCards = ['solus.html', 'appeal.html', 'webinar-invite.html', 'event-invite.html']
+  .map(f => mk(f, 'Example', 'Open example'));
 
 function chip(label) {
   return '<span class="chip">' + label + '</span>';
@@ -176,9 +180,12 @@ function card(c) {
     '    <p class="blurb">' + c.blurb + '</p>',
     '  </div>',
     '  <div class="chips">' + c.core.map(chip).join('') + '</div>',
-    '  <span class="open">Open template &rarr;</span>',
+    '  <span class="open">' + (c.open || 'Open template') + ' &rarr;</span>',
     '</a>',
   ].join('\n');
+}
+function gridHtml(list) {
+  return list.map(c => '      ' + card(c).replace(/\n/g, '\n      ')).join('\n');
 }
 
 // Component matrix (rows = components, cols = email types).
@@ -306,6 +313,9 @@ const indexHtml = `<!DOCTYPE html>
       text-transform:uppercase;padding:3px 9px;border-radius:20px;margin-bottom:12px;}
     .badge-template{background:#FBEEE2;color:var(--orange-dark);}
     .badge-reference{background:#E7ECE6;color:var(--green);}
+    .badge-example{background:#ECE6DA;color:#86714F;}
+    .group{font-family:'Poppins',Arial,sans-serif;font-size:18px;font-weight:700;color:var(--ink);margin:32px 0 0;}
+    .group-note{font-size:14px;color:#6A6457;margin:6px 0 0;max-width:720px;}
     .card h2{font-family:'Poppins',Arial,sans-serif;color:var(--ink);font-size:21px;margin:0 0 8px;font-weight:700;}
     .blurb{font-size:14.5px;color:var(--body);margin:0 0 16px;}
     .chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px;}
@@ -366,12 +376,20 @@ const indexHtml = `<!DOCTYPE html>
   <div class="wrap">
     <h2 class="section">Reference</h2>
     <div class="grid">
-${[card(cards[0])].map(s => '      ' + s.replace(/\n/g, '\n      ')).join('\n')}
+${gridHtml([masterCard])}
     </div>
 
     <h2 class="section">Templates</h2>
+
+    <h3 class="group">Newsletter template</h3>
     <div class="grid">
-${cards.slice(1).map(c => '      ' + card(c).replace(/\n/g, '\n      ')).join('\n')}
+${gridHtml([newsletterCard])}
+    </div>
+
+    <h3 class="group">Flexible Campaign template</h3>
+    <p class="group-note">One template covers every campaign send — the examples below (solus, appeal, webinar, event) are starting points marketers copy and edit.</p>
+    <div class="grid">
+${gridHtml(campaignCards)}
     </div>
 
     ${renderMatrix()}
