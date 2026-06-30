@@ -9,6 +9,7 @@ build — not a live campaign. All copy and imagery are placeholders.
 - **Master 640px:** [`awc-master-demo-640.html`](awc-master-demo-640.html) — wider-desktop A/B variant + **component source** for all templates.
 - **Templates:** [`newsletter.html`](newsletter.html) · [`solus.html`](solus.html) · [`appeal.html`](appeal.html) · [`webinar-invite.html`](webinar-invite.html) · [`event-invite.html`](event-invite.html)
 - **SFMC build kit:** [`sfmc/`](sfmc/) — 2 Content Builder templates (slots + blocks) + 15-module block library + 5 starter emails, per the agreed *2-template* architecture. See [`sfmc/README.md`](sfmc/README.md). Regenerate with `node .claude/build-sfmc.js`.
+- **Figma spec sheet:** [`FIGMA.md`](FIGMA.md) — exact colour/text tokens, spacing, image slots + asset mapping, and a component structure for rebuilding the system in Figma.
 - **Visual reference:** [australianwildlife.org](https://www.australianwildlife.org) — photography-led, warm-but-serious conservation tone, orange CTA accent.
 
 ## Template set (assembled from the matrix)
